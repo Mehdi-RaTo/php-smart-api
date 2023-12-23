@@ -4,7 +4,7 @@ Developing a smart API with a simple structure.
 ## Example
 For example service name is `Yow`
 
-I create a file named `Yow.php` in the path `/API/Services/` and place the following code in it.
+Then create a file named `Yow.php` in the path `/API/Services/` and place the following code in it.
 
 ```php
 <?php class Yow extends APIService
