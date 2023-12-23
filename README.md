@@ -43,3 +43,33 @@ fetch("https://example.com/API/GetService.php", {
 ```
 
 #### 💡 Look at `usage.html` file for a better understanding.
+
+## API Result
+#### Result Model
+```json
+{
+    "IsSuccess": "boolean",
+    "StatusCode": "integer",
+    "Message": "string",
+    "Result": "any"
+}
+```
+
+#### For example:
+```json
+{
+    "IsSuccess": true,
+    "StatusCode": 200,
+    "Message": "OK",
+    "Result": "Hello World !"
+}
+```
+or
+```json
+{
+    "IsSuccess": false,
+    "StatusCode": 404,
+    "Message": "Not Found !",
+    "Result": []
+}
+```
