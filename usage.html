@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage</title>
+</head>
+
+<body>
+    <p id="result">...</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const resultBox = document.getElementById("result");
+
+            fetch("/API/GetService.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "ServiceName": "Test2",
+                    "Parameters": {
+                        "FirstName": "Mehdi",
+                        "LastName": "RaTo"
+                    }
+                })
+            }).then((response) => response.json()).then((response) => {
+                if (response.IsSuccess) {
+                    resultBox.innerText = JSON.stringify(response.Result);
+                } else {
+                    resultBox.innerText = `(${response.StatusCode}) ${response.Message}`;
+                }
+            }).catch((error) => {
+                resultBox.innerText = String(error);
+            });
+        });
+    </script>
+</body>
+
+</html>

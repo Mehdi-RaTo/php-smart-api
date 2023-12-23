@@ -41,3 +41,5 @@ fetch("https://example.com/API/GetService.php", {
     console.log(error);
 });
 ```
+
+#### 💡 Look at `usage.html` file for a better understanding.
