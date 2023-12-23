@@ -1,4 +1,4 @@
-# PHP Simple API
+# PHP Smart API
 Developing a smart API with a simple structure.
 
 ## Example
