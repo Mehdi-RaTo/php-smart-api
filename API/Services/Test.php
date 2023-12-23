@@ -15,8 +15,15 @@ class Test extends APIService
         $Limit = 10;
 
         $RowFrom = ($Page - 1) * $Limit;
-        $TotalRowCount = $dbCon->Query("SELECT COUNT(*) AS COUNT FROM `products`")[0]["COUNT"];
-        $Rows = $dbCon->Query("SELECT * FROM `products` LIMIT ?, ?", [$RowFrom, $Limit]);
+
+        $TotalRowCount = $dbCon->Query(
+            "SELECT COUNT(*) AS COUNT FROM `products`"
+        )[0]["COUNT"];
+
+        $Rows = $dbCon->Query(
+            "SELECT * FROM `products` LIMIT ?, ?",
+            [$RowFrom, $Limit]
+        );
 
         $result = [
             "Page" => $Page,

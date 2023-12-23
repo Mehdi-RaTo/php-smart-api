@@ -5,7 +5,6 @@
  */
 
 ini_set("display_errors", false);
-
 date_default_timezone_set("UTC");
 
 define("APP_NAME", "Example");
