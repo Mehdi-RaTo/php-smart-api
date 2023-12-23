@@ -1,6 +1,6 @@
 <?php
 
-class Test extends APIService
+class Test1 extends APIService
 {
     protected $requireParams = ["Page"];
 
@@ -8,10 +8,11 @@ class Test extends APIService
     {
         $dbCon = new Database();
 
-        $Page = 1;
-        if (intval($this->params["Page"]) > 1) {
-            $Page = intval($this->params["Page"]);
+        $Page = intval($this->params["Page"]);
+        if ($Page < 1) {
+            throw new Exception("Page must be greater than 0", 1001);
         }
+
         $Limit = 10;
 
         $RowFrom = ($Page - 1) * $Limit;
