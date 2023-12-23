@@ -1,0 +1,7 @@
+<Files "*">
+  Require all denied
+</Files>
+
+<Files "GetService.php">
+  Require all granted
+</Files>
