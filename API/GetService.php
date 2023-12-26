@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
- */
-
 require_once __DIR__ . "/Common/App.Init.php";
 
 try {

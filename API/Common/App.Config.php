@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
- */
-
 ini_set("display_errors", false);
 date_default_timezone_set("UTC");
 
