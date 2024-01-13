@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
+ */
 function CheckRequiredParameters($params, $requireParams)
 {
     foreach ($requireParams as $key) {
@@ -9,6 +12,9 @@ function CheckRequiredParameters($params, $requireParams)
     }
 }
 
+/**
+ * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
+ */
 class APIService
 {
     protected $params = [];
@@ -26,6 +32,9 @@ class APIService
     }
 }
 
+/**
+ * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
+ */
 class APIController
 {
     public static function Parameters($requireParams = [])

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
+ */
 class Database
 {
     private $connection;
