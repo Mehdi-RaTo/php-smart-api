@@ -48,7 +48,7 @@ fetch("https://example.com/API/GetService.php", {
 ```json
 {
     "ServiceName": "string",
-    "Parameters": "any"
+    "Parameters": "object"
 }
 ```
 
