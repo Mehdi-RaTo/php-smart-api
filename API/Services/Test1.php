@@ -9,8 +9,8 @@ class Test1 extends APIService
         $dbCon = new Database();
 
         $Page = intval($this->params["Page"]);
-        if ($Page < 1) {
-            throw new Exception("Page must be greater than 0", 1001);
+        if ($Page <= 0) {
+            throw new Exception("Page must be more than 0", 1001);
         }
 
         $Limit = 10;
