@@ -12,6 +12,10 @@ try {
     $ServiceName = $params["ServiceName"];
     $Parameters = $params["Parameters"] ?? [];
 
+    if (!is_array($Parameters)) {
+        throw new Exception("Bad Request", 400);
+    }
+
     $ServicePath = __DIR__ . "/Services/" . $ServiceName . ".php";
 
     if (!file_exists($ServicePath)) {

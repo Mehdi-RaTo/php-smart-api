@@ -7,8 +7,29 @@ function CheckRequiredParameters($params, $requireParams)
 {
     foreach ($requireParams as $key) {
         if (!isset($params[$key])) {
-            throw new Exception("Bad Request", 400);
+            if (IS_DEBUG) {
+                throw new Exception("Bad Request (Parameter '$key' Required.)", 400);
+            } else {
+                throw new Exception("Bad Request", 400);
+            }
         }
+    }
+}
+
+/**
+ * @author  Mehdi_RaTo (https://t.me/Mehdi_RaTo)
+ */
+class Response
+{
+    public $StatusCode;
+    public $Message;
+    public $Result;
+
+    public function __construct($Result = [], $Message = "OK", $StatusCode = 200)
+    {
+        $this->Result = $Result;
+        $this->Message = $Message;
+        $this->StatusCode = $StatusCode;
     }
 }
 
@@ -57,12 +78,21 @@ class APIController
                 "Result" => []
             ]);
         } else {
-            echo json_encode([
-                "IsSuccess" => true,
-                "StatusCode" => $StatusCode,
-                "Message" => $Message,
-                "Result" => $Result
-            ]);
+            if ($Result instanceof Response) {
+                echo json_encode([
+                    "IsSuccess" => true,
+                    "StatusCode" => $Result->StatusCode,
+                    "Message" => $Result->Message,
+                    "Result" => $Result->Result
+                ]);
+            } else {
+                echo json_encode([
+                    "IsSuccess" => true,
+                    "StatusCode" => $StatusCode,
+                    "Message" => $Message,
+                    "Result" => $Result
+                ]);
+            }
         }
     }
 }

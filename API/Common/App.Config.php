@@ -1,6 +1,8 @@
 <?php
 
-ini_set("display_errors", false);
+define("IS_DEBUG", false);
+
+ini_set("display_errors", IS_DEBUG);
 date_default_timezone_set("UTC");
 
 define("APP_NAME", "Example");
