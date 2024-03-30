@@ -14,7 +14,7 @@ class ResultModels extends APIService
                 break;
 
             default:
-                throw new Exception("Parameter 'Model' Required!", -1001);
+                throw new Exception("Parameter 'Model' Required! (Allowed: 1 or 2)", -1001);
                 break;
         }
     }
