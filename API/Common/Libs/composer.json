@@ -1,0 +1,8 @@
+{
+    "require": {
+        "illuminate/database": "^11.33",
+        "laravel/serializable-closure": "^2.0",
+        "illuminate/pagination": "^11.33",
+        "ramsey/uuid": "^4.7"
+    }
+}
